@@ -1,10 +1,27 @@
 'use client';
 
-import { AppShell, Container, Group, Text } from '@mantine/core';
+import { AppShell, Container, Group, Skeleton, Text } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
+import dynamic from 'next/dynamic';
 import * as React from 'react';
 
-import { InternatinoalizationButton, ThemeButton } from '@/components/elements';
+const ThemeButton = dynamic(
+  () => import('@/components/elements').then((mod) => mod.ThemeButton),
+  {
+    ssr: false,
+    loading: () => <Skeleton height={20} width={50} radius='xl' />,
+  },
+);
+const InternatinoalizationButton = dynamic(
+  () =>
+    import('@/components/elements').then(
+      (mod) => mod.InternatinoalizationButton,
+    ),
+  {
+    ssr: false,
+    loading: () => <Skeleton height={20} width={50} radius='xl' />,
+  },
+);
 
 type IHomeLayoutProps = {
   children: React.ReactNode;
@@ -37,7 +54,7 @@ export const HomeLayout = ({ children }: IHomeLayoutProps) => {
       </AppShell.Header>
 
       <AppShell.Main>
-        <Container bg='blue' size='lg' pos='relative'>
+        <Container size='xl' p={0} pos='relative'>
           {children}
         </Container>
       </AppShell.Main>

@@ -1,3 +1,5 @@
+'use client';
+
 import { Switch, Text } from '@mantine/core';
 import { useLocale } from 'next-intl';
 import * as React from 'react';

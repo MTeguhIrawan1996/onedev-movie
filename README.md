@@ -19,6 +19,7 @@ This repository is 🔋 battery packed with:
 - ⚛️ React 18
 - ✨ TypeScript
 - 🐿 Zustand
+- 📁 i18n internationalization
 - 💨 Mantine UI V7.11.2 — Configured with CSS Variables to extend the **primary** color
 - 🃏 Jest — Configured for unit testing
 - 📈 Absolute Import and Path Alias — Import components using `@/` prefix
@@ -50,7 +51,11 @@ It is encouraged to use **yarn** so the husky hooks can work properly.
 yarn install
 ```
 
-### 2. Run the development server
+### 3. Setup Env
+
+rename **.env.example** to **.env.local** or **.env**.
+
+### 3. Run the development server
 
 You can start the server using this command:
 
@@ -60,7 +65,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/app/page.tsx`.
 
-### 3. Commit Message Commitizen
+### 4. Commit Message Commitizen
 
 This starter is using [Commitizen commits](https://commitizen-tools.github.io/commitizen/), it is mandatory to use it to commit changes.
 

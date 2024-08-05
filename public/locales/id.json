@@ -1,5 +1,9 @@
 {
-  "HomePage": {
-    "title": "Hello world! ID"
+  "home": {
+    "title": "Film Terpopuler"
+  },
+  "emptyState": {
+    "title": "Hasil tidak ditemukan",
+    "description": "Maaf, kami tidak menemukan hasil untuk kata yang Anda cari. Coba gunakan kata kunci yang berbeda atau periksa ejaan Anda."
   }
 }

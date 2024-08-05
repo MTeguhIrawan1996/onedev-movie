@@ -1,5 +1,9 @@
 {
-  "HomePage": {
-    "title": "Hello world! EN"
+  "home": {
+    "title": "Popular Movies"
+  },
+  "emptyState": {
+    "title": "No Results Found",
+    "description": "Sorry, we couldn't find any results for your search. Try using different keywords or check your spelling."
   }
 }

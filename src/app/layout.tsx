@@ -9,6 +9,7 @@ import './globals.css';
 
 import { HomeLayout } from '@/components/layouts';
 
+import { ReactQueryProvider } from '@/providers';
 import { theme } from '@/theme';
 
 const nonito = Nunito({
@@ -34,14 +35,16 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        <ColorSchemeScript defaultColorScheme='light' />
+        <ColorSchemeScript defaultColorScheme='dark' />
       </head>
       <body className={nonito.className}>
-        <NextIntlClientProvider messages={messages}>
-          <MantineProvider theme={theme}>
-            <HomeLayout>{children}</HomeLayout>
-          </MantineProvider>
-        </NextIntlClientProvider>
+        <ReactQueryProvider>
+          <NextIntlClientProvider messages={messages}>
+            <MantineProvider theme={theme}>
+              <HomeLayout>{children}</HomeLayout>
+            </MantineProvider>
+          </NextIntlClientProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

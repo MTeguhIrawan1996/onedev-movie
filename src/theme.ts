@@ -45,9 +45,9 @@ export const theme = createTheme({
   },
 
   defaultGradient: {
-    from: 'orange',
-    to: 'red',
-    deg: 45,
+    from: 'gray',
+    to: 'blue',
+    deg: 360,
   },
 
   /* Other */
