@@ -1,3 +1,4 @@
 import HomePage from '@/components/features/home';
+import DetailPage from '@/components/features/home-details';
 
-export { HomePage };
+export { DetailPage, HomePage };

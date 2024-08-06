@@ -1,6 +1,6 @@
 'use client';
 
-import { AppShell, Container, Group, Skeleton, Text } from '@mantine/core';
+import { AppShell, Group, Skeleton, Text } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import dynamic from 'next/dynamic';
 import * as React from 'react';
@@ -29,8 +29,8 @@ type IHomeLayoutProps = {
 
 export const HomeLayout = ({ children }: IHomeLayoutProps) => {
   return (
-    <AppShell header={{ height: 60 }} padding='md'>
-      <AppShell.Header>
+    <AppShell header={{ height: 60 }}>
+      <AppShell.Header zIndex={9999}>
         <Group h='100%' px='md'>
           <Group justify='space-between' style={{ flex: 1 }}>
             <Group gap='xs'>
@@ -53,11 +53,7 @@ export const HomeLayout = ({ children }: IHomeLayoutProps) => {
         </Group>
       </AppShell.Header>
 
-      <AppShell.Main>
-        <Container size='xl' p={0} pos='relative'>
-          {children}
-        </Container>
-      </AppShell.Main>
+      <AppShell.Main>{children}</AppShell.Main>
     </AppShell>
   );
 };

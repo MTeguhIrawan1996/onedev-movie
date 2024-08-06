@@ -5,7 +5,7 @@ import { instance as axios } from '../axios';
 import { GResponse } from '@/types/global';
 
 export type IMoviesResponse = {
-  id: string;
+  id: number;
   original_title: string;
   overview: string;
   poster_path: string;

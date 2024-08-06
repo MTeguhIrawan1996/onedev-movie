@@ -40,7 +40,7 @@ export default async function RootLayout({
       <body className={nonito.className}>
         <ReactQueryProvider>
           <NextIntlClientProvider messages={messages}>
-            <MantineProvider theme={theme}>
+            <MantineProvider theme={theme} defaultColorScheme='dark'>
               <HomeLayout>{children}</HomeLayout>
             </MantineProvider>
           </NextIntlClientProvider>

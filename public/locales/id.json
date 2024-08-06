@@ -5,5 +5,10 @@
   "emptyState": {
     "title": "Hasil tidak ditemukan",
     "description": "Maaf, kami tidak menemukan hasil untuk kata yang Anda cari. Coba gunakan kata kunci yang berbeda atau periksa ejaan Anda."
+  },
+  "detailMovie": {
+    "userScore": "Skor Pengguna",
+    "overview": "Ringkasan",
+    "topCast": "Pemeran Teratas"
   }
 }

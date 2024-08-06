@@ -51,6 +51,7 @@ export const MovieList = () => {
             {data?.results.map((v) => (
               <MovieCard
                 key={v.id}
+                id={v.id}
                 image={v.poster_path}
                 title={v.original_title}
                 description={v.overview}

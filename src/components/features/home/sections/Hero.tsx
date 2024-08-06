@@ -20,7 +20,7 @@ export const Hero = () => {
   return (
     <SimpleGrid cols={{ base: 1, sm: 2 }} spacing='md'>
       <NextImageFill
-        src={`${env.NEXT_PUBLIC_IMAGE_URL}${data?.results[0].poster_path || ''}`}
+        src={`${env.NEXT_PUBLIC_IMAGE_URL}/w500${data?.results[0].poster_path || ''}`}
         alt={data?.results[0].original_title || ''}
         figureProps={{ h: PRIMARY_COL_HEIGHT, shadow: 'lg' }}
         withOverlay
@@ -30,7 +30,7 @@ export const Hero = () => {
           <Grid.Col span={6} key={v.id}>
             <Box pos='relative'>
               <NextImageFill
-                src={`${env.NEXT_PUBLIC_IMAGE_URL}${v.poster_path || ''}`}
+                src={`${env.NEXT_PUBLIC_IMAGE_URL}/w500${v.poster_path || ''}`}
                 alt={v.original_title || ''}
                 figureProps={{ h: SECONDARY_COL_HEIGHT, shadow: 'lg' }}
                 withOverlay
