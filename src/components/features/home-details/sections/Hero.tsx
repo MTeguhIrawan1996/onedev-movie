@@ -108,7 +108,7 @@ export const Hero = async ({ movie }: IHeroProps) => {
                   {movie.overview || '-'}
                 </Text>
               </Stack>
-              <SimpleGrid cols={3} mt='md'>
+              <SimpleGrid cols={{ base: 2, sm: 3 }} mt='md'>
                 {movie.credits.crew.slice(0, 10).map((v) => (
                   <Stack gap={0} key={`${v.id}-${v.department}`}>
                     <Text fz={20} fw={500} c='white'>
