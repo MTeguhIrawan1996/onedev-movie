@@ -20,7 +20,7 @@ import NextImageFill from '@/components/elements/images/NextImageFill';
 import { ActionPanel } from '@/components/features/home-details/ui/ActionPanel';
 
 import { env } from '@/env';
-import { IMovieDetailResponse } from '@/services/rest-api/movies/useReadMovieDetail';
+import { IMovieDetailResponse } from '@/services/rest-api/movies/server/getMovieDetail';
 import { minutesToHours } from '@/utils/helpers/MinutesToHours';
 import { getColorByPercentage } from '@/utils/lib/getColorPercentage';
 import dayjs from '@/utils/lib/globalDayJs';

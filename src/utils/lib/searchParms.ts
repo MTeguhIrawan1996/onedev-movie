@@ -9,4 +9,4 @@ export const movieParsers = {
   p: parseAsFloat.withDefault(1),
   search: parseAsString.withDefault(''),
 };
-export const examplesCache = createSearchParamsCache(movieParsers);
+export const movieCache = createSearchParamsCache(movieParsers);

@@ -1,4 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
+import { queryOptions, useQuery } from '@tanstack/react-query';
+
+import { getAllGenres } from '@/services/rest-api/genres/server/getAllGenres';
 
 import { instance as axios } from '../axios';
 
@@ -22,12 +24,15 @@ export const readAllGenres = async () => {
   }
 };
 
-export const useReadAllGenres = ({ genres }: { genres?: IGenresResponse }) => {
-  const isActive = genres && genres.genres.length < 1;
-
-  return useQuery<IGenresResponse>({
+export const queryOptionsGenres = () => {
+  // const isActive = genres && genres.genres.length < 1;
+  return queryOptions({
     queryKey: genresKeys.readAll(),
-    queryFn: readAllGenres,
-    enabled: isActive,
+    queryFn: getAllGenres,
+    // enabled: isActive,
   });
+};
+
+export const useReadAllGenres = () => {
+  return useQuery(queryOptionsGenres());
 };

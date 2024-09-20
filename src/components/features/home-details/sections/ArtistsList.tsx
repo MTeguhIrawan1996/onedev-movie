@@ -11,7 +11,7 @@ import { getTranslations } from 'next-intl/server';
 import * as React from 'react';
 
 import { env } from '@/env';
-import { IMovieDetailResponse } from '@/services/rest-api/movies/useReadMovieDetail';
+import { IMovieDetailResponse } from '@/services/rest-api/movies/server/getMovieDetail';
 
 interface IArtistListProps {
   movie: IMovieDetailResponse;

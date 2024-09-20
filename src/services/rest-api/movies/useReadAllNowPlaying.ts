@@ -1,5 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
+import { queryOptions, useQuery } from '@tanstack/react-query';
 
+import { getAllNowPlay } from '@/services/rest-api/movies/server/getAllNowPlay';
 import { IMoviesResponse } from '@/services/rest-api/movies/useReadAllMovies';
 
 import { instance as axios } from '../axios';
@@ -21,9 +22,13 @@ export const readAllNowPlay = async () => {
   }
 };
 
-export const useReadAllNowPlay = () => {
-  return useQuery<GResponse<IMoviesResponse>>({
+export const queryOptionsNowPlay = () => {
+  return queryOptions({
     queryKey: nowPlayKeys.readAll(),
-    queryFn: readAllNowPlay,
+    queryFn: getAllNowPlay,
   });
+};
+
+export const useReadAllNowPlay = () => {
+  return useQuery(queryOptionsNowPlay());
 };

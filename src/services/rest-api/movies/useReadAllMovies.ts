@@ -1,4 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
+import { queryOptions, useQuery } from '@tanstack/react-query';
+
+import { getAllMovies } from '@/services/rest-api/movies/server/getAllMovies';
 
 import { instance as axios } from '../axios';
 
@@ -39,13 +41,21 @@ export const readAllMovies = async ({
   }
 };
 
+export const queryOptionsMovies = ({
+  year,
+  locale,
+  search,
+}: Partial<IRequest>) => {
+  return queryOptions({
+    queryKey: [...movieKeys.readAll(), { locale, year, search }],
+    queryFn: () => getAllMovies({ locale, year, search }),
+  });
+};
+
 export const useReadAllMovies = ({
   year,
   locale,
   search,
 }: Partial<IRequest>) => {
-  return useQuery<GResponse<IMoviesResponse>>({
-    queryKey: [...movieKeys.readAll(), { locale, year, search }],
-    queryFn: () => readAllMovies({ year, locale, search }),
-  });
+  return useQuery(queryOptionsMovies({ locale, search, year }));
 };

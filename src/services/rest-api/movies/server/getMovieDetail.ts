@@ -1,11 +1,12 @@
+'use server';
+
 import { AxiosResponse } from 'axios';
 import { getLocale } from 'next-intl/server';
 import { cache } from 'react';
-import 'server-only';
 
 import { IGenresResponse } from '@/services/rest-api/genres/useReadAllGenres';
 
-import { instance as axios } from '../axios';
+import { instance as axios } from '../../axios';
 
 type ICredits = {
   credits: {
@@ -39,7 +40,7 @@ type Props = {
   params: { slug: string };
 };
 
-export const readMovieDetail = cache(async ({ params }: Props) => {
+export const getMovieDetail = cache(async ({ params }: Props) => {
   const locale = await getLocale();
 
   const response: AxiosResponse<IMovieDetailResponse, any> = await axios.get(

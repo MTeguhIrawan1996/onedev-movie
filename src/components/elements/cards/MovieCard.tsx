@@ -9,7 +9,6 @@ import {
 } from '@mantine/core';
 import { useLocale } from 'next-intl';
 import * as React from 'react';
-import { useShallow } from 'zustand/react/shallow';
 
 import classes from './Cards.module.css';
 
@@ -17,9 +16,9 @@ import NextImageFill from '@/components/elements/images/NextImageFill';
 import { PrimaryLink } from '@/components/elements/links';
 
 import { env } from '@/env';
+import { IGenresResponse } from '@/services/rest-api/genres/useReadAllGenres';
 import { getColorByPercentage } from '@/utils/lib/getColorPercentage';
 import dayjs from '@/utils/lib/globalDayJs';
-import { useStoreGenres } from '@/utils/store/useStoreGenres';
 
 interface IMovieCardProps {
   id?: number;
@@ -29,6 +28,7 @@ interface IMovieCardProps {
   releaseDate?: string;
   currentGenres?: number[];
   voteAverage?: number;
+  genres?: IGenresResponse;
 }
 
 export const MovieCard = ({
@@ -39,14 +39,12 @@ export const MovieCard = ({
   description,
   releaseDate,
   voteAverage = 0,
+  genres,
 }: IMovieCardProps) => {
   const locale = useLocale();
-  const [genresState] = useStoreGenres(
-    useShallow((state) => [state.genresState]),
-  );
 
   const features = currentGenres?.map((v) => {
-    const currentGenre = genresState?.genres.find((o) => o.id === v);
+    const currentGenre = genres?.genres.find((o) => o.id === v);
 
     return (
       <Badge variant='light' key={v}>

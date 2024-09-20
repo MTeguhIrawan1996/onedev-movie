@@ -1,6 +1,6 @@
 import { DetailPage } from '@/components/features';
 
-import { readMovieDetail } from '@/services/rest-api/movies/useReadMovieDetail';
+import { getMovieDetail } from '@/services/rest-api/movies/server/getMovieDetail';
 
 export const revalidate = 1200;
 
@@ -9,6 +9,7 @@ export type IMovieDetailProps = {
 };
 
 export default async function MovieDetails({ params }: IMovieDetailProps) {
-  const movie = await readMovieDetail({ params });
+  const movie = await getMovieDetail({ params });
+
   return <DetailPage movie={movie} />;
 }
