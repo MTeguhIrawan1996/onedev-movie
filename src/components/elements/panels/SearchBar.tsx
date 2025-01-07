@@ -17,9 +17,9 @@ export const SearchBar = () => {
   return (
     <TextInput
       defaultValue={search}
-      leftSectionPointerEvents='none'
+      leftSectionPointerEvents="none"
       leftSection={<IconSearch style={{ width: '50%', height: '50%' }} />}
-      placeholder='Enter Your Keyword'
+      placeholder="Enter Your Keyword"
       w={{ base: '100%', sm: 300 }}
       onKeyDown={(event) => {
         if (event.key === 'Enter') {

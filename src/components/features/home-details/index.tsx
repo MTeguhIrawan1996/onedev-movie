@@ -11,7 +11,7 @@ type IDetailPageProps = {
 
 export default function DetailPage({ ...rest }: IDetailPageProps) {
   return (
-    <Stack gap='xl'>
+    <Stack gap="xl">
       <Hero {...rest} />
       <ArtistList {...rest} />
     </Stack>

@@ -29,17 +29,17 @@ export const MovieList = () => {
   });
 
   return (
-    <Paper shadow='md' radius='md' withBorder p='md'>
+    <Paper shadow="md" radius="md" withBorder p="md">
       <Stack>
-        <Group justify='space-between'>
-          <Text component='h1' inherit fz={20} fw={900} c='gray'>
+        <Group justify="space-between">
+          <Text component="h1" inherit fz={20} fw={900} c="gray">
             🎥 {t('title')}
           </Text>
           <SearchBar />
         </Group>
         {isPending && <MovieListLoading />}
         {data && (
-          <SimpleGrid cols={{ base: 1, xs: 2, sm: 3 }} mt='md'>
+          <SimpleGrid cols={{ base: 1, xs: 2, sm: 3 }} mt="md">
             {data?.results.map((v) => (
               <MovieCard
                 key={v.id}

@@ -5,21 +5,15 @@ import { MantineLogo } from '@mantinex/mantine-logo';
 import dynamic from 'next/dynamic';
 import * as React from 'react';
 
-const ThemeButton = dynamic(
-  () => import('@/components/elements').then((mod) => mod.ThemeButton),
-  {
-    ssr: false,
-    loading: () => <Skeleton height={20} width={50} radius='xl' />,
-  },
-);
+const ThemeButton = dynamic(() => import('@/components/elements').then((mod) => mod.ThemeButton), {
+  ssr: false,
+  loading: () => <Skeleton height={20} width={50} radius="xl" />,
+});
 const InternatinoalizationButton = dynamic(
-  () =>
-    import('@/components/elements').then(
-      (mod) => mod.InternatinoalizationButton,
-    ),
+  () => import('@/components/elements').then((mod) => mod.InternatinoalizationButton),
   {
     ssr: false,
-    loading: () => <Skeleton height={20} width={50} radius='xl' />,
+    loading: () => <Skeleton height={20} width={50} radius="xl" />,
   },
 );
 
@@ -31,21 +25,21 @@ export const HomeLayout = ({ children }: IHomeLayoutProps) => {
   return (
     <AppShell header={{ height: 60 }}>
       <AppShell.Header zIndex={9999}>
-        <Group h='100%' px='md'>
-          <Group justify='space-between' style={{ flex: 1 }}>
-            <Group gap='xs'>
-              <MantineLogo size={30} type='mark' color='blue' />
+        <Group h="100%" px="md">
+          <Group justify="space-between" style={{ flex: 1 }}>
+            <Group gap="xs">
+              <MantineLogo size={30} type="mark" color="blue" />
               <Text
-                size='xl'
+                size="xl"
                 fw={900}
-                component='span'
-                variant='gradient'
+                component="span"
+                variant="gradient"
                 gradient={{ from: 'gray', to: 'blue', deg: 360 }}
               >
                 OneMovie
               </Text>
             </Group>
-            <Group ml='xl' gap='sm'>
+            <Group ml="xl" gap="sm">
               <ThemeButton />
               <InternatinoalizationButton />
             </Group>

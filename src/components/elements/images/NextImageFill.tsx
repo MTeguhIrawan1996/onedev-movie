@@ -21,12 +21,7 @@ export default function NextImageFill({
   withOverlay = false,
   ...rest
 }: INextImageFillProps) {
-  const {
-    pos = 'relative',
-    h = 550,
-    w = '100%',
-    ...figureRest
-  } = figureProps || {};
+  const { pos = 'relative', h = 550, w = '100%', ...figureRest } = figureProps || {};
 
   return (
     <Paper
@@ -36,7 +31,7 @@ export default function NextImageFill({
       style={{
         overflow: 'hidden',
       }}
-      component='figure'
+      component="figure"
       className={classes.card}
       {...figureRest}
     >
@@ -52,9 +47,9 @@ export default function NextImageFill({
         }}
         placeholder={placeholder}
         loading={loading}
-        sizes='(max-width: 768px) 100vw,
+        sizes="(max-width: 768px) 100vw,
           (max-width: 1200px) 50vw,
-          33vw'
+          33vw"
         {...rest}
       />
       {withOverlay && <div className={classes.overlay} />}

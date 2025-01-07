@@ -1,12 +1,4 @@
-import {
-  Badge,
-  Box,
-  Button,
-  Card,
-  Group,
-  RingProgress,
-  Text,
-} from '@mantine/core';
+import { Badge, Box, Button, Card, Group, RingProgress, Text } from '@mantine/core';
 import { useLocale } from 'next-intl';
 import * as React from 'react';
 
@@ -47,7 +39,7 @@ export const MovieCard = ({
     const currentGenre = genres?.genres.find((o) => o.id === v);
 
     return (
-      <Badge variant='light' key={v}>
+      <Badge variant="light" key={v}>
         {currentGenre?.name}
       </Badge>
     );
@@ -56,8 +48,8 @@ export const MovieCard = ({
   const percentage = (voteAverage * 10).toFixed(0);
 
   return (
-    <Card withBorder shadow='xs' radius='md' p='md' className={classes.card}>
-      <Card.Section pos='relative'>
+    <Card withBorder shadow="xs" radius="md" p="md" className={classes.card}>
+      <Card.Section pos="relative">
         <NextImageFill
           src={`${env.NEXT_PUBLIC_IMAGE_URL}/w500${image}`}
           alt={title || ''}
@@ -66,24 +58,24 @@ export const MovieCard = ({
         />
       </Card.Section>
 
-      <Card.Section className={classes.section} mt='md'>
-        <Group justify='space-between'>
-          <Box w='50%'>
-            <Text fz='lg' fw={500} truncate>
+      <Card.Section className={classes.section} mt="md">
+        <Group justify="space-between">
+          <Box w="50%">
+            <Text fz="lg" fw={500} truncate>
               {title}
             </Text>
           </Box>
-          <Badge size='sm' variant='light'>
+          <Badge size="sm" variant="light">
             {dayjs(releaseDate).locale(locale).format('LL')}
           </Badge>
         </Group>
-        <Text fz='sm' component='p' mt='xs' lineClamp={2}>
+        <Text fz="sm" component="p" mt="xs" lineClamp={2}>
           {description || '-'}
         </Text>
       </Card.Section>
 
       <Card.Section className={classes.section}>
-        <Text mt='md' className={classes.label} c='dimmed'>
+        <Text mt="md" className={classes.label} c="dimmed">
           Genre
         </Text>
         <Group gap={7} mt={5}>
@@ -91,9 +83,9 @@ export const MovieCard = ({
         </Group>
       </Card.Section>
 
-      <Group mt='xs' gap='2'>
+      <Group mt="xs" gap="2">
         <PrimaryLink style={{ flex: 1 }} href={`/${id}`}>
-          <Button radius='md' fullWidth>
+          <Button radius="md" fullWidth>
             Show details
           </Button>
         </PrimaryLink>
@@ -109,7 +101,7 @@ export const MovieCard = ({
               },
             ]}
             label={
-              <Text ta='center' fz={10} className={classes['label-ring']}>
+              <Text ta="center" fz={10} className={classes['label-ring']}>
                 {percentage}%
               </Text>
             }

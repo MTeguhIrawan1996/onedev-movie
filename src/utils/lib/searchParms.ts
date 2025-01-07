@@ -1,8 +1,4 @@
-import {
-  createSearchParamsCache,
-  parseAsFloat,
-  parseAsString,
-} from 'nuqs/server';
+import { createSearchParamsCache, parseAsFloat, parseAsString } from 'nuqs/server';
 
 export const movieParsers = {
   l: parseAsFloat.withDefault(10),

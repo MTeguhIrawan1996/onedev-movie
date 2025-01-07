@@ -12,11 +12,7 @@ type IRequest = {
   search: string;
 };
 
-export const getAllMovies = async ({
-  year,
-  locale,
-  search,
-}: Partial<IRequest>) => {
+export const getAllMovies = async ({ year, locale, search }: Partial<IRequest>) => {
   try {
     const response = await axios.get<GResponse<IMoviesResponse>>(
       `/${search ? 'search' : 'discover'}/movie?query=${search}&language=${locale}&page=1&sort_by=popularity.desc&primary_release_year=${year}`,

@@ -18,10 +18,7 @@ export default withBundleAnalyzer(
   withNextIntl({
     reactStrictMode: false,
     images: {
-      domains: [
-        `${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}`,
-        'images.unsplash.com',
-      ],
+      domains: [`${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}`, 'images.unsplash.com'],
     },
     eslint: {
       ignoreDuringBuilds: true,

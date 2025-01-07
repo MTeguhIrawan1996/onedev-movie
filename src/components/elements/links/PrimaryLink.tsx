@@ -8,29 +8,22 @@ export type PrimaryLinkProps = {
   children: React.ReactNode;
 } & React.ComponentPropsWithRef<'a'>;
 
-export const PrimaryLink = React.forwardRef<
-  HTMLAnchorElement,
-  PrimaryLinkProps
->(({ href, openNewTab = false, children, ...rest }, ref) => {
-  const isNewTab = openNewTab && !href.startsWith('/') && !href.startsWith('#');
+export const PrimaryLink = React.forwardRef<HTMLAnchorElement, PrimaryLinkProps>(
+  ({ href, openNewTab = false, children, ...rest }, ref) => {
+    const isNewTab = openNewTab && !href.startsWith('/') && !href.startsWith('#');
 
-  if (!isNewTab) {
+    if (!isNewTab) {
+      return (
+        <Link href={href} ref={ref} {...rest}>
+          {children}
+        </Link>
+      );
+    }
+
     return (
-      <Link href={href} ref={ref} {...rest}>
+      <a ref={ref} target="_blank" rel="noopener noreferrer" href={href} {...rest}>
         {children}
-      </Link>
+      </a>
     );
-  }
-
-  return (
-    <a
-      ref={ref}
-      target='_blank'
-      rel='noopener noreferrer'
-      href={href}
-      {...rest}
-    >
-      {children}
-    </a>
-  );
-});
+  },
+);

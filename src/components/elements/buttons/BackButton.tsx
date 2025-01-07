@@ -9,10 +9,8 @@ export const BackButton = () => {
   const router = useRouter();
   return (
     <Button
-      leftSection={
-        <IconArrowBack style={{ width: '70%', height: '70%' }} stroke={1.5} />
-      }
-      variant='gradient'
+      leftSection={<IconArrowBack style={{ width: '70%', height: '70%' }} stroke={1.5} />}
+      variant="gradient"
       onClick={() => router.back()}
     >
       Back

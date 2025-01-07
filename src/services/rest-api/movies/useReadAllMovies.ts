@@ -26,11 +26,7 @@ export const movieKeys = {
   readAll: () => ['movies'],
 };
 
-export const readAllMovies = async ({
-  year,
-  locale,
-  search,
-}: Partial<IRequest>) => {
+export const readAllMovies = async ({ year, locale, search }: Partial<IRequest>) => {
   try {
     const response = await axios.get<GResponse<IMoviesResponse>>(
       `/${search ? 'search' : 'discover'}/movie?query=${search}&language=${locale}&page=1&sort_by=popularity.desc&primary_release_year=${year}`,
@@ -41,21 +37,13 @@ export const readAllMovies = async ({
   }
 };
 
-export const queryOptionsMovies = ({
-  year,
-  locale,
-  search,
-}: Partial<IRequest>) => {
+export const queryOptionsMovies = ({ year, locale, search }: Partial<IRequest>) => {
   return queryOptions({
     queryKey: [...movieKeys.readAll(), { locale, year, search }],
     queryFn: () => getAllMovies({ locale, year, search }),
   });
 };
 
-export const useReadAllMovies = ({
-  year,
-  locale,
-  search,
-}: Partial<IRequest>) => {
+export const useReadAllMovies = ({ year, locale, search }: Partial<IRequest>) => {
   return useQuery(queryOptionsMovies({ locale, search, year }));
 };

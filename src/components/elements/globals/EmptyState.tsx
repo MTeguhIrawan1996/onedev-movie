@@ -13,10 +13,10 @@ export const EmptyState = () => {
       <SimpleGrid spacing={{ base: 40, sm: 80 }} cols={{ base: 1, sm: 2 }}>
         <Image src={EmptyStateImg.src} className={classes.mobileImage} />
         <div>
-          <Text component='h1' variant='gradient' className={classes.title}>
+          <Text component="h1" variant="gradient" className={classes.title}>
             {t('title')}...
           </Text>
-          <Text c='dimmed' size='lg'>
+          <Text c="dimmed" size="lg">
             {t('description')}
           </Text>
         </div>

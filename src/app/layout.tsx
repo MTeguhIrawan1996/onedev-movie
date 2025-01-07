@@ -35,12 +35,12 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        <ColorSchemeScript defaultColorScheme='dark' />
+        <ColorSchemeScript defaultColorScheme="dark" />
       </head>
       <body className={nonito.className}>
         <ReactQueryProvider>
           <NextIntlClientProvider messages={messages}>
-            <MantineProvider theme={theme} defaultColorScheme='dark'>
+            <MantineProvider theme={theme} defaultColorScheme="dark">
               <HomeLayout>{children}</HomeLayout>
             </MantineProvider>
           </NextIntlClientProvider>
