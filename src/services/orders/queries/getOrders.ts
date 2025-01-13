@@ -6,7 +6,7 @@ import { generateQueryParams } from '@/utils/helpers/generateQueryParams';
 
 import { IGlobalMetaRequest, IQueryOptions, ObjResponse } from '@/types/global';
 
-export interface IOrdersObjResponse {
+interface IOrdersObjResponse {
   id: number;
   order_number: string;
   invoice_number: string;
@@ -21,12 +21,12 @@ export interface IOrdersObjResponse {
   created_at: string;
 }
 
-export interface IOrdersResponse {
+interface IOrdersResponse {
   items: IOrdersObjResponse[];
   total_count: number;
 }
 
-export interface IOrderRequest extends IGlobalMetaRequest {
+interface IOrderRequest extends IGlobalMetaRequest {
   status: string;
   keyword: string;
   order_date_from: string;

@@ -1,5 +1,5 @@
 import { env } from '@/env';
-import { getAxiosConfig } from '@/services/apiResolver';
+import { getAxiosConfig } from '@/services/axiosConfig';
 
 const baseURL = `${env.NEXT_PUBLIC_REST_API_URL || ''}`;
 

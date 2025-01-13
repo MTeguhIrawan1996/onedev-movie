@@ -8,19 +8,19 @@ type IDeleteOrderRequest = {
 };
 
 // define any with response data
-export interface IOrdersArgs {
+export interface IOrdersMutationArgs {
   mutationOption: UseMutationOptions<any, AxiosError, Partial<IDeleteOrderRequest>>;
   request: Partial<IDeleteOrderRequest>;
 }
 
-export const deleteOrder = async ({ id }: IOrdersArgs['request']) => {
+export const deleteOrder = async ({ id }: IOrdersMutationArgs['request']) => {
   const response = await orderInstance.delete(`/${id}`);
   return response.data;
 };
 
 // define any with response data
-export const useDeleteOrder = (mutationOption?: IOrdersArgs['mutationOption']) => {
-  return useMutation<any, AxiosError, IOrdersArgs['request']>({
+export const useDeleteOrder = (mutationOption?: IOrdersMutationArgs['mutationOption']) => {
+  return useMutation<any, AxiosError, IOrdersMutationArgs['request']>({
     mutationFn: ({ id }) => deleteOrder({ id }),
     ...mutationOption,
   });
