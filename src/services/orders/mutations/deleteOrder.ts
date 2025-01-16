@@ -7,8 +7,8 @@ type IDeleteOrderRequest = {
   id: string;
 };
 
-// define any with response data
 export interface IOrdersMutationArgs {
+  // define any with response data
   mutationOption: UseMutationOptions<any, AxiosError, Partial<IDeleteOrderRequest>>;
   request: Partial<IDeleteOrderRequest>;
 }

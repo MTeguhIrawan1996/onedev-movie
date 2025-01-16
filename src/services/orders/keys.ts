@@ -2,9 +2,9 @@
 
 export const ORDER_KEYS = {
   root: () => ['ORDER'],
-  list: (args?: any) => [...ORDER_KEYS.root(), 'LIST', { ...(args || {}) }],
-  detail: (args?: any) => [...ORDER_KEYS.root(), 'DETAIL', { ...(args || {}) }],
-  historyLog: (args?: any) => [...ORDER_KEYS.root(), 'HISTORY_LOG', { ...(args || {}) }],
-  invoice: (args?: any) => [...ORDER_KEYS.root(), 'INVOICE', { ...(args || {}) }],
-  voucers: (args?: any) => [...ORDER_KEYS.root(), 'VOUCERS', { ...(args || {}) }],
+  list: (args?: object) => [...ORDER_KEYS.root(), 'LIST', { ...(args || {}) }],
+  detail: (args?: object) => [...ORDER_KEYS.root(), 'DETAIL', { ...(args || {}) }],
+  historyLog: (args?: object) => [...ORDER_KEYS.root(), 'HISTORY_LOG', { ...(args || {}) }],
+  invoice: (args?: object) => [...ORDER_KEYS.root(), 'INVOICE', { ...(args || {}) }],
+  voucers: (args?: object) => [...ORDER_KEYS.root(), 'VOUCERS', { ...(args || {}) }],
 };

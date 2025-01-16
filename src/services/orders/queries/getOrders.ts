@@ -60,7 +60,7 @@ export const queryOptionOrders = (args?: Partial<IOrdersArgs>) => {
       const newData = data?.items.filter((obj) => obj.status === 'active');
       return newData;
     },
-    ...options,
+    ...(options || {}),
   });
 };
 
